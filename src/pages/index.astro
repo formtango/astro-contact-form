@@ -1,0 +1,21 @@
+---
+// A static Astro page. No adapter, endpoint or API key: the form posts to FormTango.
+// Replace YOUR_FORM_ID with your form's id from https://formtango.com
+const endpoint = 'https://formtango.com/f/YOUR_FORM_ID';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact form with FormTango and Astro</title>
+  </head>
+  <body>
+    <h1>Contact us</h1>
+    <form action={endpoint} method="POST">
+      <label>Email <input type="email" name="email" required /></label>
+      <label>Message <textarea name="message" required></textarea></label>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
